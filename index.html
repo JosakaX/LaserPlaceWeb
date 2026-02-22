@@ -28,6 +28,12 @@
       content="Centro estético premium en Maracay. Depilación láser diodo 808nm con tecnología de última generación."
     />
     <meta property="og:locale" content="es_VE" />
+    <meta
+      property="og:image"
+      content="https://josakax.github.io/LaserPlaceWeb/assets/img/lpblancoVM.svg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <!-- Security Headers (meta equivalents) -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
@@ -63,9 +69,11 @@
     <link rel="stylesheet" href="assets/css/output.css" />
 
     <style>
-      /* Evita desplazamiento horizontal por elementos fuera del viewport (orbs, panel) */
+      /* FIX: Bloquea el area fantasma horizontal en todos los navegadores moviles */
       html {
         overflow-x: hidden;
+        max-width: 100%;
+        overscroll-behavior-x: none;
       }
 
       /* Base Styles */
@@ -82,9 +90,12 @@
             rgba(255, 255, 255, 0) 50%
           ),
           linear-gradient(180deg, #ffffff 0%, #e8f5e9 100%);
-        background-attachment: fixed;
+        /* Sin background-attachment: fixed — Safari movil no lo soporta bien y crea viewport extra */
+        background-attachment: scroll;
         color: #1a2e2a;
         overflow-x: hidden;
+        max-width: 100%;
+        overscroll-behavior-x: none;
         scroll-behavior: smooth;
       }
 
