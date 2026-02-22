@@ -63,6 +63,11 @@
     <link rel="stylesheet" href="assets/css/output.css" />
 
     <style>
+      /* Evita desplazamiento horizontal por elementos fuera del viewport (orbs, panel) */
+      html {
+        overflow-x: hidden;
+      }
+
       /* Base Styles */
       body {
         background:
@@ -392,7 +397,7 @@
     </nav>
 
     <!-- Mobile Menu Panel -->
-    <div id="mobileMenu" class="fixed inset-0 z-[60] hidden">
+    <div id="mobileMenu" class="fixed inset-0 z-[60] hidden overflow-hidden">
       <div
         class="absolute inset-0 bg-black/30 backdrop-blur-sm opacity-0 transition-opacity duration-300"
         id="mobileMenuOverlay"
@@ -1055,7 +1060,7 @@
 
         <div class="border-t border-neutral-secondary/20 pt-8 text-center">
           <p class="text-xs text-neutral-secondary font-medium">
-            &copy; 2025 Laser Place Maracay. Todos los derechos reservados.
+            &copy; 2025 Laser Place Maracay. Todos los derechos reservados. Made by JosakaX
           </p>
         </div>
       </div>
